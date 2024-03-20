@@ -1,6 +1,6 @@
 import React from 'react';
-import Link from 'react-router-dom';
-import reviews from '../data/reviews.json';
+import { useNavigate } from 'react-router-dom';
+// import reviews from '../data/reviews.json';
 
 function HomeMainSection() {
     return (
@@ -9,7 +9,7 @@ function HomeMainSection() {
                 <h2>About Us</h2>
                 <p>Our company is the best company in the world. We have the best products and the best customer service.</p>
                 <br />
-                <Link to="/products">Shop Now!</Link>
+                <a href="/Productpage">View Products</a>
             </div>
             <div className="reviews"> {/* MUST COMPLETE REVIEWS SECTION!!! */}
             </div>
