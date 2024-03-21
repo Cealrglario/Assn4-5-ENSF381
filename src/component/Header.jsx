@@ -1,26 +1,19 @@
 import React from 'react';
-import {useNavigate} from 'react-router-dom';
+import '../App.css';
 
 
 function Header() {
     return (
             <div>
                 <div className="header">
-                    <h1>Our Company</h1>
+                    <img src="/images/logo.png" alt="company logo" />
+                    <h2>Our Company</h2>
                 </div>
                 <div className="nav">
                     <nav>
-                        <ul>
-                            <li>
-                                <a href="/"> Home </a>
-                            </li>
-                            <li>
-                                <a href="/Productpage"> Products </a>
-                            </li>
-                            <li>
-                                <a href="/Login"> Login </a>
-                            </li>
-                        </ul>
+                        <a href="/"> Home </a>
+                        <a href="/Productpage"> Products </a>
+                        <a href="/Login"> Login </a>
                     </nav>
                 </div>
             </div>

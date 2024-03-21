@@ -1,5 +1,4 @@
 import logo from './logo.svg';
-import './App.css';
 import Homepage from './component/Homepage';
 import Productpage from './component/Productpage'; 
 import Login from './component/Login';
