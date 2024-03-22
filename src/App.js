@@ -4,10 +4,6 @@ import Productpage from './component/Productpage';
 import Login from './component/Login';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-// Group members:
-// Carl Elgario (UCID: 30186248)
-// Wade Banman (UCID: 30197933)
-
 function App() {
   return (
     <BrowserRouter>
