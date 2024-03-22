@@ -3,12 +3,18 @@ function ProductItem({product, addtocart}){
     const [isHovered, setIsHovered] = useState(false);
         return (
             <div className="product_item">
+                <style jsx>{`
+                .product_item img{
+                    width: 20%;
+                    height: auto;
+                }
+            `}</style>
                 <img src={product.image} alt={product.name} />
-                <h2
+                <p
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}>
                     {product.name}
-                </h2>
+                </p>
                 {isHovered && <p>{product.description}</p>}
                 <p>{product.price}</p>
                 <button onClick={() => addtocart(product)}>Add to Cart</button>

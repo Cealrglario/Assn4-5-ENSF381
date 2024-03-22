@@ -23,7 +23,7 @@ function Cart({ cart, removeFromCart, updatequantity}) {
                 <CartItem key={item.id} item={item} removeFromCart={removeFromCart} updatequantity={updatequantity}/>
             ))}
             <h2>Shopping Cart</h2>
-            <h2>Total (in Cart): {total}</h2>
+            <p>Total (in Cart): {(total).toFixed(2)}</p>
         </div>
     );
 }

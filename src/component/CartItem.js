@@ -26,11 +26,17 @@ function CartItem({ item, removeFromCart, updatequantity }) {
 
     return (
         <div className="cart_item">
+            <style jsx>{`
+                .cart_item img{
+                    width: 250px;
+                    height: auto;
+                }
+            `}</style>
             <img src={item.image} alt={item.name} />
             <p>{item.name}</p>
             <p>{item.price}</p>
             <p>Quantity: {quantity}</p>
-            <p>Total: {item.price * quantity}</p>
+            <p>Total: {(item.price * quantity).toFixed(2)}</p>
             <button onClick={() => handleRemove() }>Remove</button>
         </div>
     )
