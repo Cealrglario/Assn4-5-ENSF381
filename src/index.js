@@ -1,3 +1,7 @@
+// Group members:
+// Carl Elgario (UCID: 30186248)
+// Wade Banman (UCID: 30197933)
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
