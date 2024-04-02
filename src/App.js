@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import Homepage from './component/Homepage';
 import Productpage from './component/Productpage'; 
-import Login from './component/Login';
+import LoginPage from './component/LoginPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route path="/Login" element={<Login />} />
+          <Route path="/LoginPage" element={<LoginPage />} />
           <Route path="/Productpage" element={<Productpage />} />
           <Route path="/" element={<Homepage />} />
         </Routes>

@@ -13,7 +13,7 @@ function Header() {
                     <nav>
                         <a href="/"> Home </a>
                         <a href="/Productpage"> Products </a>
-                        <a href="/Login"> Login </a>
+                        <a href="/LoginPage"> Login </a>
                     </nav>
                 </div>
             </div>
