@@ -16,12 +16,24 @@ function SignupForm({setSignup, signup}){
             setMessage('Passwords do not match');
         }
         else{
-            setMessage('User Created Successfully');
-            // Add code here later
+            fetch('http://127.0.0.1:5000/registration', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({'username': username, 'password': password, 'email': email}),
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('User sign-up failed. Please try again.');
+                }
+            })
+            .then(data => setMessage(data.message))
+            .catch(error => setMessage(error.message));
         }
     }
-
-
 
     return(
         <div>
@@ -45,4 +57,5 @@ function SignupForm({setSignup, signup}){
         </div>
     )
 }
+
 export default SignupForm;
