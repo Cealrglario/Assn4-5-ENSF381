@@ -1,8 +1,8 @@
-import {React, useState, useContext, useEffect} from 'react';
+import {React, useState, useContext} from 'react';
 import {AuthContext} from '../App';
 
 function LoginForm({setSignup, signup}){
-    const {authenticated, setAuthenticated} = useContext(AuthContext)
+    const {setAuthenticated} = useContext(AuthContext)
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [Message, setMessage] = useState('');
