@@ -1,4 +1,4 @@
-import { React, createContext, useState, useEffect} from 'react';
+import { React, createContext, useState, useEffect } from 'react';
 import logo from './logo.svg';
 import Homepage from './component/Homepage';
 import Productpage from './component/Productpage'; 
