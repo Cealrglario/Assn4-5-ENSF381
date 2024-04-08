@@ -1,13 +1,12 @@
-import {React, useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+import {React, useState, useContext, useEffect} from 'react';
+import {AuthContext} from '../App';
 
 function LoginForm({setSignup, signup}){
+    const {authenticated, setAuthenticated} = useContext(AuthContext)
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [Message, setMessage] = useState('');
-    const [authenticated, setAuthenticated] = useState(false)
-    const navigate = useNavigate()
-    
+
     const handleSubmit = (event) => {
         event.preventDefault();
         if (!username || !password) {
@@ -31,10 +30,7 @@ function LoginForm({setSignup, signup}){
             .then(data => {
                 setMessage(data.message)
                 if (data.authenticated) {
-                    // Set authenticated to true after a moment for to allow user to read message
-                    setTimeout(() => {
-                        setAuthenticated(true);
-                    }, 1000);
+                    setAuthenticated(true);
                 }
                 else if (!data.authenticated) {
                     setAuthenticated(false)
@@ -44,14 +40,11 @@ function LoginForm({setSignup, signup}){
         }
     };
 
-    if (authenticated) {
-        navigate("/Productpage")
-    }
-
     return(
         <div>
             <form class='loginForm' onSubmit={handleSubmit}>
-                {Message && <p>{Message}</p>}
+                <p><u>You must first login before accessing the products page.</u></p>
+                {Message && <h3>{Message}</h3>}
                 <nobr>Username: </nobr>
                 <input id='username' type="text" placeholder='Enter your Username' value={username} onChange={(arg) => setUsername(arg.target.value)}/>
                 <br/>

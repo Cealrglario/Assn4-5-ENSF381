@@ -1,12 +1,17 @@
-import {React, useEffect, useState} from 'react';
+import {React, useContext, useEffect, useState} from 'react';
+import {AuthContext} from '../App';
+import {useNavigate} from 'react-router-dom'
 import Header from './Header';
 import Footer from './Footer';
 import ProductList from './ProductList';
 import Cart from './Cart';
 
 function Productpage() {
+    const {authenticated} = useContext(AuthContext);
     const [cart, setCart] = useState([]);
     const [loading, setLoading] = useState(true); //cart was loading to fast so added loading state to fix it
+    const navigate = useNavigate()
+
     useEffect(() => {
         const savedCart = localStorage.getItem('cart');
         if (savedCart) {
@@ -43,7 +48,10 @@ function Productpage() {
         setCart(prevCart => prevCart.map(item => item.id === id ? { ...item, quantity } : item));
     }
 
-    return (
+    if (!authenticated) {
+        navigate("/LoginPage")
+    } else if (authenticated)
+        return (
         <div>
           <Header />
           <table>

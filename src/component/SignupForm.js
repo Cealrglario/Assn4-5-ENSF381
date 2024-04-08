@@ -38,7 +38,7 @@ function SignupForm({setSignup, signup}){
     return(
         <div>
             <form class='SignupForm' onSubmit={handleSubmit}>
-                {Message && <p>{Message}</p>}
+                {Message && <h3>{Message}</h3>}
                 <nobr>Username: </nobr>
                 <input id='username' type="text" placeholder='Enter your Username' value={username} onChange={(arg) => setUsername(arg.target.value)}/>
                 <br/>
